@@ -1,3 +1,5 @@
+import Studio from './Components/Studio'
+import Home from './Components/Home'
 
 import { useState } from 'react'
 
@@ -47,42 +49,15 @@ export default function App() {
       </header>
 
       {/* Main Content */}
-      <main className="mx-auto min-h-[75vh] max-w-7xl px-6 py-16">
+      <main className="mx-auto min-h-[75vh] max-w-7xl px-6 pt-8 pb-16">
         {activePage === 'Home' && (
-          <section className="max-w-3xl space-y-6">
-            <p className="text-sm font-medium tracking-widest text-[#68E2CF]">
-              UNITY × AI ASSET WORKFLOW
-            </p>
+  <Home
+    onOpenStudio={() => setActivePage('Studio')}
+    onOpenDownloads={() => setActivePage('Downloads')}
+  />
+)}
 
-            <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
-              Less managing.
-              <br />
-              More creating.
-            </h1>
-
-            <p className="max-w-xl text-lg leading-relaxed text-slate-400">
-              Manage Unity placeholders and create game-ready assets
-              through one focused workspace.
-            </p>
-
-            <button
-              onClick={() => setActivePage('Studio')}
-              className="rounded-xl bg-[#68E2CF] px-7 py-3 font-semibold text-[#080F14] transition-colors hover:bg-[#8AF0DE]"
-            >
-              Open AI Studio →
-            </button>
-          </section>
-        )}
-
-        {activePage === 'Studio' && (
-          <section className="space-y-4">
-            <p className="text-sm text-[#68E2CF]">AI STUDIO</p>
-            <h1 className="text-4xl font-bold">Create something new.</h1>
-            <p className="text-slate-400">
-              Texture, audio, speech and 3D generation tools will live here.
-            </p>
-          </section>
-        )}
+        {activePage === 'Studio' && <Studio />}
 
         {activePage === 'Downloads' && (
           <section className="space-y-4">
