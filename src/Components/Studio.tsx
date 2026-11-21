@@ -1,5 +1,6 @@
-
+import './PagePolish.css'
 import { useState } from 'react'
+import './VisualPolish.css'
 
 type Tool = 'Textures' | 'Audio' | 'Speech' | '3D'
 
@@ -228,10 +229,10 @@ export default function Studio() {
   }
 
   return (
-    <section className="mx-auto max-w-7xl space-y-8 pb-16">
+    <section className="rg-studio rg-studio-refined mx-auto max-w-7xl space-y-8 pb-16">
 
       {/* PAGE HEADER */}
-      <header className="space-y-4">
+      <header className="rg-studio-header relative space-y-4">
         <p className="text-xs font-semibold tracking-[0.22em] text-[#68E2CF]">
           RENDERGUARD / CREATIVE WORKSPACE
         </p>
@@ -256,7 +257,7 @@ export default function Studio() {
 
       {/* TOOL NAVIGATION */}
       <div
-        className="grid grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-[#111E25] p-2 sm:grid-cols-4"
+        className="rg-tool-nav grid grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-[#111E25] p-2 sm:grid-cols-4"
         role="tablist"
         aria-label="Asset generator"
       >
@@ -288,7 +289,7 @@ export default function Studio() {
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
 
         {/* GENERATION PANEL */}
-        <div className="space-y-7 rounded-2xl border border-white/10 bg-[#111E25] p-5 sm:p-7 lg:p-8">
+        <div className="rg-studio-panel space-y-7 rounded-2xl border border-white/10 bg-[#111E25] p-5 sm:p-7 lg:p-8">
 
           <div className="space-y-2">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#68E2CF]">
@@ -421,7 +422,7 @@ export default function Studio() {
               type="button"
               disabled={busy}
               onClick={generate}
-              className="w-full rounded-xl bg-[#68E2CF] px-6 py-3.5 font-semibold text-[#080F14] transition-all hover:bg-[#8AF0DE] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#68E2CF] disabled:cursor-not-allowed disabled:opacity-60"
+              className="rg-primary-action w-full rounded-xl bg-[#68E2CF] px-6 py-3.5 font-semibold text-[#080F14] transition-all hover:bg-[#8AF0DE] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#68E2CF] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {busy
                 ? 'Preparing preview…'
@@ -437,7 +438,7 @@ export default function Studio() {
 
         {/* PREVIEW PANEL */}
         <div
-          className="flex min-h-[480px] min-w-0 flex-col rounded-2xl border border-white/10 bg-[#111E25] p-5 sm:p-7 lg:p-8"
+          className="rg-studio-panel flex min-h-[480px] min-w-0 flex-col rounded-2xl border border-white/10 bg-[#111E25] p-5 sm:p-7 lg:p-8"
           aria-live="polite"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -456,7 +457,7 @@ export default function Studio() {
             </span>
           </div>
 
-          <div className="mt-6 flex flex-1 flex-col rounded-2xl border border-white/10 bg-[#0B161C] p-4 sm:p-5">
+          <div className="rg-preview-frame mt-6 flex flex-1 flex-col rounded-2xl border border-white/10 bg-[#0B161C] p-4 sm:p-5">
 
             {/* CATEGORY VISUAL */}
             <div aria-hidden="true">

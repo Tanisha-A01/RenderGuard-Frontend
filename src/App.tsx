@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react'
-
+import FixedPageBackground from './Components/FixedPageBackground'
 import Account from './Components/Account'
 import Docs from './Components/Docs'
 import Downloads from './Components/Downloads'
@@ -39,15 +39,6 @@ export default function App() {
 
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-clip bg-[#080F14] text-[#EAF3F4]">
-
-      {/* Subtle global background */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[650px] overflow-hidden"
-      >
-        <div className="absolute -right-40 -top-64 h-[550px] w-[550px] rounded-full bg-[#68E2CF]/[0.035] blur-[110px]" />
-        <div className="absolute -left-52 top-48 h-[420px] w-[420px] rounded-full bg-[#68E2CF]/[0.025] blur-[110px]" />
-      </div>
 
       {/* Navigation */}
       <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#080F14]/90 backdrop-blur-xl">
@@ -171,6 +162,11 @@ export default function App() {
         )}
       </header>
 
+      {/* Page-specific fixed background */}
+      {activePage !== 'Home' && (
+        <FixedPageBackground page={activePage} />
+      )}
+
       {/* Main content */}
       <main
         id="main-content"
@@ -192,7 +188,6 @@ export default function App() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/[0.08] bg-[#0A141A]">
         <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
-
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
 
             {/* Product identity */}
@@ -253,9 +248,7 @@ export default function App() {
           <div className="mt-12 flex flex-col gap-3 border-t border-white/[0.08] pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
             <p>© 2026 RenderGuard. All rights reserved.</p>
 
-            <p>
-              Built for game-development workflows.
-            </p>
+            <p>Built for game-development workflows.</p>
           </div>
         </div>
       </footer>

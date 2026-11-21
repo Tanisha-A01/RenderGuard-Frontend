@@ -1,4 +1,4 @@
-
+import './PagePolish.css'
 import { useState } from 'react'
 import ManagerPreview from './ManagerPreview'
 
@@ -84,7 +84,7 @@ export default function Downloads() {
   }
 
   return (
-    <main className="mx-auto max-w-7xl space-y-24 pb-16 sm:space-y-28">
+    <div className="rg-downloads mx-auto max-w-7xl space-y-24 pb-16 sm:space-y-28">
 
       {/* PAGE HEADER */}
       <header className="space-y-6">
@@ -124,7 +124,7 @@ export default function Downloads() {
       </header>
 
       {/* MAIN DOWNLOAD SECTION */}
-      <section className="overflow-hidden rounded-3xl border border-[#68E2CF]/20 bg-[#10221F]">
+      <section className="rg-download-hero overflow-hidden rounded-3xl border border-[#68E2CF]/20 bg-[#10221F]">
         <div className="grid items-center gap-10 p-6 sm:p-10 lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
 
           {/* Download information */}
@@ -206,7 +206,7 @@ export default function Downloads() {
           {managerFeatures.map((feature) => (
             <article
               key={feature.title}
-              className="group rounded-2xl border border-white/10 bg-[#111E25] p-6 transition-colors hover:border-[#68E2CF]/30 sm:p-8"
+              className="rg-feature-card group rounded-2xl border border-white/10 bg-[#111E25] p-6 transition-colors hover:border-[#68E2CF]/30 sm:p-8"
             >
               <div className="mb-8 flex items-start justify-between">
                 <div
@@ -256,7 +256,7 @@ export default function Downloads() {
             {installationSteps.map((step, index) => (
               <li
                 key={step.title}
-                className="flex gap-5 rounded-xl border border-white/10 bg-[#111E25] p-5 sm:p-6"
+                className="rg-install-step flex gap-5 rounded-xl border border-white/10 bg-[#111E25] p-5 sm:p-6"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#68E2CF]/25 bg-[#17312F] text-sm font-semibold text-[#68E2CF]">
                   {String(index + 1).padStart(2, '0')}
@@ -276,7 +276,7 @@ export default function Downloads() {
           </ol>
 
           {/* Package location */}
-          <aside className="h-fit space-y-6 rounded-2xl border border-white/10 bg-[#111E25] p-6 sm:p-8">
+          <aside className="rg-install-aside h-fit space-y-6 rounded-2xl border border-white/10 bg-[#111E25] p-6 sm:p-8">
             <div className="space-y-3">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#68E2CF]">
                 Installation directory
@@ -349,6 +349,6 @@ export default function Downloads() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

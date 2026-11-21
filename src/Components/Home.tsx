@@ -1,8 +1,9 @@
-
 import { useState } from 'react'
 import HeroVisual from './HeroVisual'
+import HeroBackground from './HeroBackground'
 import ManagerPreview from './ManagerPreview'
 import StudioCardVisual from './StudioCardVisual'
+import './HomePolish.css'
 
 type HomeProps = {
   onOpenStudio: () => void
@@ -76,11 +77,11 @@ export default function Home({
   const step = steps[activeStep]
 
   return (
-    <div className="space-y-24 pb-16 sm:space-y-32">
+    <div className="rg-home space-y-24 pb-16 sm:space-y-32">
 
       {/* HERO */}
-      <section className="relative grid min-h-[70vh] items-center gap-12 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
-        <div className="pointer-events-none absolute left-0 top-10 h-72 w-72 rounded-full bg-teal-400/5 blur-3xl" />
+      <section className="rg-home-hero relative isolate grid min-h-[70vh] items-center gap-12 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+        <HeroBackground />
 
         {/* Hero content */}
         <div className="relative space-y-8">
@@ -132,7 +133,7 @@ export default function Home({
       </section>
 
       {/* WORKFLOW */}
-      <section className="space-y-10">
+      <section className="rg-home-section space-y-10">
         <div className="max-w-2xl space-y-4">
           <p className="text-sm tracking-widest text-[#68E2CF]">
             HOW IT WORKS
@@ -149,7 +150,7 @@ export default function Home({
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="rg-home-workflow grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
 
           {/* Workflow step selector */}
           <div className="space-y-3">
@@ -238,7 +239,7 @@ export default function Home({
       </section>
 
       {/* AI STUDIO */}
-      <section className="space-y-10">
+      <section className="rg-home-section space-y-10">
         <div className="max-w-2xl space-y-4">
           <p className="text-sm tracking-widest text-[#68E2CF]">
             AI ASSET STUDIO
@@ -255,7 +256,7 @@ export default function Home({
         </div>
 
         {/* Studio visual cards */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="rg-home-studio-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {tools.map((tool) => (
             <div
               key={tool.title}
@@ -286,7 +287,7 @@ export default function Home({
       </section>
 
       {/* UNITY MANAGER */}
-      <section className="grid items-center gap-12 border-t border-white/10 pt-20 lg:grid-cols-2">
+      <section className="rg-home-manager grid items-center gap-12 border-t border-white/10 pt-20 lg:grid-cols-2">
         <div className="space-y-6">
           <p className="text-sm tracking-widest text-[#68E2CF]">
             UNITY MANAGER
@@ -316,13 +317,13 @@ export default function Home({
         </div>
 
         {/* Illustrative Unity Manager dashboard */}
-        <div className="min-w-0">
+        <div className="rg-home-manager-preview min-w-0">
           <ManagerPreview />
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className="rounded-3xl border border-[#68E2CF]/20 bg-[#102521] px-6 py-14 text-center sm:px-8 md:px-16 md:py-16">
+      <section className="rg-home-cta relative overflow-hidden rounded-3xl border border-[#68E2CF]/20 bg-[#102521] px-6 py-14 text-center sm:px-8 md:px-16 md:py-16">
         <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
           Ready to build better worlds?
         </h2>

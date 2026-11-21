@@ -1,4 +1,4 @@
-
+import './PagePolish.css'
 import { useState } from 'react'
 
 type DocSection = {
@@ -193,7 +193,7 @@ export default function Docs() {
   }
 
   return (
-    <main className="mx-auto max-w-7xl space-y-10 pb-16">
+    <div className="rg-docs mx-auto max-w-7xl space-y-10 pb-16">
 
       {/* PAGE HEADER */}
       <header className="space-y-5">
@@ -226,7 +226,7 @@ export default function Docs() {
       <div className="grid items-start gap-6 lg:grid-cols-[270px_minmax(0,1fr)]">
 
         {/* SIDEBAR */}
-        <aside className="min-w-0 space-y-5 lg:sticky lg:top-24">
+        <aside className="rg-docs-sidebar min-w-0 space-y-5 lg:sticky lg:top-24">
 
           {/* Search */}
           <div className="rounded-2xl border border-white/10 bg-[#111E25] p-4">
@@ -353,7 +353,7 @@ export default function Docs() {
         </aside>
 
         {/* ARTICLE */}
-        <article className="min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#111E25]">
+        <article className="rg-docs-article min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#111E25]">
 
           {active ? (
             <>
@@ -520,6 +520,6 @@ export default function Docs() {
           )}
         </article>
       </div>
-    </main>
+    </div>
   )
 }
